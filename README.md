@@ -1,6 +1,6 @@
 # Notes
 
-## Python algorithms
+## Python
 
 - [Algo](./python/algorithms/)
 - [Math](./python/math/)
