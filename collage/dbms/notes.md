@@ -1,3 +1,5 @@
+## Question: 1
+
 ```sql
 -- Table Structure
 CREATE TABLE employee001 (
@@ -36,17 +38,84 @@ SELECT COUNT(*) FROM employee001;
 SELECT SUM(salary) FROM employee001;
 
 -- 7. Display details of employees joined after 2010
-SELECT * FROM employee001 
+SELECT * FROM employee001
 WHERE joining_date > TO_DATE('31-12-2010','DD-MM-YYYY');
 
 -- 8. Display name of employee having maximum salary
-SELECT ename FROM employee001 
+SELECT ename FROM employee001
 WHERE salary = (SELECT MAX(salary) FROM employee001);
 
 -- 9. Display name of employees who joined in January
-SELECT ename FROM employee001 
+SELECT ename FROM employee001
 WHERE TO_CHAR(joining_date,'MM') = '01';
 
 -- 10. Display joining date in 'DD-MM-YYYY' format
 SELECT ename, TO_CHAR(joining_date,'DD-MM-YYYY') FROM employee001;
+```
+
+## Question: 2
+
+```sql
+-- Execute before running programs
+SET SERVEROUTPUT ON
+
+-- 3.1 Program to accept a number and check whether it is Positive, Negative or Zero
+DECLARE
+ n NUMBER;
+BEGIN
+ n := &n;
+ IF n > 0 THEN
+  DBMS_OUTPUT.PUT_LINE('Number is Positive');
+ ELSIF n < 0 THEN
+  DBMS_OUTPUT.PUT_LINE('Number is Negative');
+ ELSE
+  DBMS_OUTPUT.PUT_LINE('Number is Zero');
+ END IF;
+END;
+/
+
+-- 3.2 Program to accept a number and check whether it is Even or Odd
+DECLARE
+ n NUMBER;
+BEGIN
+ n := &n;
+ IF MOD(n, 2) = 0 THEN
+  DBMS_OUTPUT.PUT_LINE('Number is Even');
+ ELSE
+  DBMS_OUTPUT.PUT_LINE('Number is Odd');
+ END IF;
+END;
+/
+
+-- 3.3 Program to accept a number and print the Sum of Digits
+DECLARE
+ n NUMBER;
+ sum NUMBER := 0;
+ r NUMBER;
+BEGIN
+ n := &n;
+ WHILE n > 0 LOOP
+  r := MOD(n,10);
+  sum := sum + r;
+  n := FLOOR(n/10);
+ END LOOP;
+ DBMS_OUTPUT.PUT_LINE('Sum of digits = ' || sum);
+END;
+/
+
+-- 3.4 Program to accept a number and print its Reverse
+DECLARE
+ n NUMBER;
+ rev NUMBER := 0;
+ r NUMBER;
+BEGIN
+ n := &n;
+ WHILE n > 0 LOOP
+  r := MOD(n,10);
+  rev := rev * 10 + r;
+  n := FLOOR(n/10);
+ END LOOP;
+ DBMS_OUTPUT.PUT_LINE('Reverse number = ' || rev);
+END;
+/
 ```
