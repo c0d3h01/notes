@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Personal Information</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+      }
+      .info-box {
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        max-width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>My Personal Information</h2>
+    <div class="info-box" id="info"></div>
+    <script>
+      const name = "John Doe";
+      const studentClass = "10th Grade";
+      const mobileNo = "9876543210";
+      const hobby = "Reading Books";
+      const city = "New York";
+      const personalInfo = `
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Class:</strong> ${studentClass}</p>
+            <p><strong>Mobile No:</strong> ${mobileNo}</p>
+            <p><strong>Hobby:</strong> ${hobby}</p>
+            <p><strong>City:</strong> ${city}</p>
+        `;
+      document.getElementById("info").innerHTML = personalInfo;
+    </script>
+  </body>
+</html>
