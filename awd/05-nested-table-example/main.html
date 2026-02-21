@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nested Table Example</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 10px;
+      }
+      td,
+      th {
+        border: 2px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+      .outer {
+        background-color: #f0f8ff;
+      }
+      .inner {
+        background-color: #ffe4e1;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Nested Table Example</h2>
+    <table class="outer">
+      <tr>
+        <th>Outer Table - Column 1</th>
+        <th>Outer Table - Column 2</th>
+      </tr>
+      <tr>
+        <td>Row 1, Col 1</td>
+        <td>
+          <table class="inner">
+            <tr>
+              <th>Inner Table - Col 1</th>
+              <th>Inner Table - Col 2</th>
+            </tr>
+            <tr>
+              <td>Nested Row 1</td>
+              <td>Nested Row 2</td>
+            </tr>
+            <tr>
+              <td colspan="2">Nested Footer</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
