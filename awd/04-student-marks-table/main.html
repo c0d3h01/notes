@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Marks Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 70%;
+      }
+      th,
+      td {
+        border: 1px solid #333;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      caption {
+        caption-side: top;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+      }
+      .average-row td {
+        background-color: #e6f7ff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Students Marks Table
+      </caption>
+      <tr>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+      <tr>
+        <td rowspan="2">Rajashree</td>
+        <td>Adv Web</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>OS</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Kiran</td>
+        <td>Adv Web</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>OS</td>
+        <td>75</td>
+      </tr>
+      <tr class="average-row">
+        <td></td>
+        <td colspan="2">Average of all marks: 72.5</td>
+      </tr>
+    </table>
+  </body>
+</html>
