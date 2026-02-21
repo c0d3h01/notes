@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Registration Form</title>
+    <style>
+      h2 {
+        color: orange;
+      }
+      form {
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 300px;
+        background-color: #f9f9f9;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>User Registration Form</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required />
+      <label for="appointment">Date of Appointment:</label>
+      <input type="date" id="appointment" name="appointment" required />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
