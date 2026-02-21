@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sort Array</title>
+  </head>
+  <body>
+    <h2>Sort Array Elements</h2>
+    <label for="arrayInput">Enter array elements (comma-separated):</label>
+    <input type="text" id="arrayInput" placeholder="e.g. 5,2,9,1,3" />
+    <button onclick="sortArray()">Sort</button>
+    <p id="sortedResult"></p>
+    <script>
+      function sortArray() {
+        const input = document.getElementById("arrayInput").value;
+        const array = input.split(",").map(Number);
+        if (array.some(isNaN)) {
+          document.getElementById("sortedResult").innerText =
+            "Please enter only numbers.";
+          return;
+        }
+        array.sort((a, b) => a - b);
+        document.getElementById(
+          "sortedResult"
+        ).innerText = `Sorted Array: ${array.join(", ")}`;
+      }
+    </script>
+  </body>
+</html>
