@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Maximum number</title>
+  </head>
+  <body>
+    <script>
+      function findMaxNumber() {
+        let numbers = [];
+        for (let i = 0; i < 5; i++) {
+          let input = prompt(`Enter number ${i + 1}:`);
+          let num = Number(input);
+          if (isNaN(num)) {
+            alert("Please enter a valid number.");
+            i--;
+          } else numbers.push(num);
+        }
+        let maxNumber = Math.max(...numbers);
+        alert("The maximum number entered is: " + maxNumber);
+      }
+      findMaxNumber();
+    </script>
+  </body>
+</html>
