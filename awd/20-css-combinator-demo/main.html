@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Combinator Example</title>
+    <style>
+      div span {
+        color: green;
+        font-weight: bold;
+      }
+      section > p {
+        color: blue;
+        font-style: italic;
+      }
+      h2 ~ p {
+        color: red;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Combinator Demo</h1>
+    <div>
+      <p>This is a paragraph inside a div.</p>
+      <span
+        >This <strong>span</strong> is a descendant of div and will be
+        green.</span
+      >
+    </div>
+    <span>This span is outside div and will NOT be affected.</span>
+    <hr />
+    <section>
+      <p>This is a direct child of section and will be blue & italic.</p>
+      <div>
+        <p>
+          This is a nested paragraph and NOT a direct child, so not affected.
+        </p>
+      </div>
+    </section>
+    <hr />
+    <h2>Heading</h2>
+    <p>This paragraph is a general sibling of h2 and will be red+underlined.</p>
+    <p>This is another affected paragraph.</p>
+    <div>
+      <p>This paragraph is inside a div, but still general sibling of h2.</p>
+    </div>
+  </body>
+</html>
