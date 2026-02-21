@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fibonacci Series</title>
+  </head>
+  <body>
+    <h2>Fibonacci Series (7 elements)</h2>
+    <button onclick="displayFibonacci()">Show Series</button>
+    <p id="result"></p>
+    <script>
+      function generateFibonacci(n) {
+        let fib = [];
+        for (let i = 0; i < n; i++) {
+          if (i === 0) fib.push(0);
+          else if (i === 1) fib.push(1);
+          else fib.push(fib[i - 1] + fib[i - 2]);
+        }
+        return fib;
+      }
+      function displayFibonacci() {
+        const series = generateFibonacci(7);
+        document.getElementById("result").innerText =
+          "Fibonacci Series: " + series.join(", ");
+      }
+    </script>
+  </body>
+</html>
