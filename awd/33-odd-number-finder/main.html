@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ODD number</title>
+  </head>
+  <body>
+    <script>
+      function displayOddNumbers() {
+        let numbers = [];
+        for (let i = 0; i < 5; i++) {
+          let num = parseInt(prompt(`Enter number ${i + 1}:`), 10);
+          if (!isNaN(num)) numbers.push(num);
+          else {
+            alert("Please enter a valid number.");
+            i--;
+          }
+        }
+        let oddNumbers = numbers.filter((num) => num % 2 !== 0);
+        if (oddNumbers.length > 0)
+          alert("Odd numbers are: " + oddNumbers.join(", "));
+        else alert("No odd numbers entered.");
+      }
+      displayOddNumbers();
+    </script>
+  </body>
+</html>
