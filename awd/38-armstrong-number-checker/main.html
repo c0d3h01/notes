@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Armstrong Number Checker</title>
+    <script>
+      function checkArmstrong() {
+        let number = prompt("Enter a three-digit number:");
+        number = parseInt(number);
+        if (isNaN(number) || number < 100 || number > 999) {
+          alert("Please enter a valid three-digit number.");
+          return;
+        }
+        let originalNumber = number;
+        let sumOfCubes = 0;
+        while (number > 0) {
+          let digit = number % 10;
+          sumOfCubes += Math.pow(digit, 3);
+          number = Math.floor(number / 10);
+        }
+        if (sumOfCubes === originalNumber)
+          alert(originalNumber + " is an Armstrong number.");
+        else alert(originalNumber + " is not an Armstrong number.");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Armstrong Number Checker</h1>
+    <button onclick="checkArmstrong()">Check Number</button>
+  </body>
+</html>
