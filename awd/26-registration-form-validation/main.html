@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form Validation</title>
+    <script>
+      function validateForm() {
+        let username = document.forms["regForm"]["username"].value.trim();
+        let password = document.forms["regForm"]["password"].value;
+        let email = document.forms["regForm"]["email"].value.trim();
+        let phone = document.forms["regForm"]["phone"].value.trim();
+
+        if (username === "") {
+          alert("Username cannot be blank!");
+          return false;
+        }
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long!");
+          return false;
+        }
+        if (email.indexOf("@") === -1) {
+          alert("Invalid email address! Must contain @");
+          return false;
+        }
+        if (!/^\d+$/.test(phone)) {
+          alert("Phone number must contain only numbers!");
+          return false;
+        }
+
+        alert("Registration successful!");
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <form name="regForm" onsubmit="return validateForm()">
+      <label>Username: </label><input type="text" name="username" /><br /><br />
+      <label>Password: </label
+      ><input type="password" name="password" /><br /><br />
+      <label>Email: </label><input type="text" name="email" /><br /><br />
+      <label>Phone: </label><input type="text" name="phone" /><br /><br />
+      <input type="submit" value="Register" />
+    </form>
+  </body>
+</html>
