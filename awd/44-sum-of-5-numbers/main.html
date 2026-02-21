@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sum of 5 Numbers</title>
+  </head>
+  <body>
+    <h2>Check the prompt boxes to enter numbers</h2>
+    <script>
+      let sum = 0;
+      for (let i = 1; i <= 5; i++) {
+        let input = prompt(`Enter number ${i}:`);
+        let num = parseFloat(input);
+        if (isNaN(num)) {
+          alert("Invalid input. Please enter numeric values only.");
+          i--;
+        } else {
+          sum += num;
+        }
+      }
+      alert("The sum of the 5 numbers is: " + sum);
+    </script>
+  </body>
+</html>
