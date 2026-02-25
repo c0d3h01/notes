@@ -6,7 +6,7 @@ public class print_patterns {
 	public static void printPattern(int n) {
 		int i, j;
 		for (i = 1; i <= n; i++) {
-			for (j = n; j >= n-i; j--) {
+			for (j = n; j >= n-i+1; j--) {
 				System.out.print(j + " ");
 			}
 			System.out.println();
@@ -19,4 +19,5 @@ public class print_patterns {
 		int num = s.nextInt();
 		printPattern(num);
 	}
+
 }
