@@ -1,3 +1,4 @@
+-- Table Structure
 CREATE TABLE employee001 (
   deptno NUMBER(2),
   empno NUMBER(4),
@@ -6,6 +7,7 @@ CREATE TABLE employee001 (
   joining_date DATE
 );
 
+-- Insert Records
 INSERT INTO employee001 VALUES (10, 101, 'ARUN', 25000, TO_DATE('12-01-2012', 'DD-MM-YYYY'));
 INSERT INTO employee001 VALUES (20, 102, 'ANIL', 18000, TO_DATE('25-03-2015', 'DD-MM-YYYY'));
 INSERT INTO employee001 VALUES (20, 103, 'SUNIL', 22000, TO_DATE('10-01-2018', 'DD-MM-YYYY'));
@@ -14,6 +16,7 @@ INSERT INTO employee001 VALUES (10, 105, 'KIRAN', 28000, TO_DATE('15-01-2011', '
 INSERT INTO employee001 VALUES (20, 106, 'AMAN', 20000, TO_DATE('20-11-2016', 'DD-MM-YYYY'));
 COMMIT;
 
+-- SQL Queries
 SELECT * FROM employee001 WHERE deptno = 20;
 SELECT * FROM employee001 ORDER BY salary DESC;
 SELECT * FROM employee001 WHERE ename LIKE '%N';
