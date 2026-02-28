@@ -589,3 +589,81 @@ Maximum number is: 45
 
 PL/SQL procedure successfully completed.
 ```
+
+---
+
+### 11. Write a PL/SQL block to accept a string and print length of string. (without using length() function).
+
+**Query Code:**
+
+```sql
+SET SERVEROUTPUT ON
+
+DECLARE
+    str VARCHAR2(50) := '&Enter_String';
+    len NUMBER := 0;
+BEGIN
+    WHILE SUBSTR(str, len + 1, 1) IS NOT NULL LOOP
+        len := len + 1;
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Length of String = ' || len);
+END;
+/
+```
+
+**Output:**
+```
+Enter value for Enter_String: HELLO
+old   2:     str VARCHAR2(50) := '&Enter_String';
+new   2:     str VARCHAR2(50) := 'HELLO';
+Length of String = 5
+
+PL/SQL procedure successfully completed.
+```
+
+---
+
+### 12. Write a PL/SQL block to accept 3 numbers and print minimum number. (without using min() function).
+
+**Query Code:**
+
+```sql
+DECLARE
+    a NUMBER;
+    b NUMBER;
+    c NUMBER;
+    min_num NUMBER;
+BEGIN
+    a := &a;
+    b := &b;
+    c := &c;
+
+    IF a < b AND a < c THEN
+        min_num := a;
+    ELSIF b < c THEN
+        min_num := b;
+    ELSE
+        min_num := c;
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Minimum number is: ' || min_num);
+END;
+/
+```
+
+**Output:**
+```
+Enter value for a: 12
+Enter value for b: 45
+Enter value for c: 30
+old   2:     a := &a;
+new   2:     a := 12;
+old   3:     b := &b;
+new   3:     b := 45;
+old   4:     c := &c;
+new   4:     c := 30;
+Minimum number is: 12
+
+PL/SQL procedure successfully completed.
+```
