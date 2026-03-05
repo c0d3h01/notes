@@ -16,4 +16,21 @@ INSERT INTO Customer VALUES (104, 'Anita Desai', 'Pune', TO_DATE('05-09-1990', '
 INSERT INTO Customer VALUES (105, 'Rahul Jain', 'Delhi', TO_DATE('10-02-1982', 'DD-MM-YYYY'), 'Doctor', 8000);
 
 COMMIT;
+
+
+SELECT * FROM Student 
+WHERE TO_CHAR(Birthdate, 'MON') = 'MAY';
+
+
+SELECT MAX(Feespaid) AS Maximum_Fees 
+FROM Student;
+
+
+SELECT * FROM Student 
+WHERE City = 'Mumbai';
+
+
+SELECT * FROM Student 
+WHERE Name LIKE 'A%';
+
 ```
