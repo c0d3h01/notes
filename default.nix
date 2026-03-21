@@ -7,5 +7,6 @@ pkgs.mkShell {
     pkgs.python312
     pkgs.clang-tools
     pkgs.nodejs
+    pkgs.mdformat
   ];
 }
