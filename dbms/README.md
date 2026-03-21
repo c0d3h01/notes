@@ -1,6 +1,6 @@
 # DBMS Practical Journal
 
----
+______________________________________________________________________
 
 | Sr. No. | Program Title | File |
 |---------|---------------|------|
@@ -10,7 +10,7 @@
 | 04 | Create Student table with proper constraints and solve queries. Student (Roll no, Name, City, Birthdate, Feespaid, Course). | [04_student_table.md](04_student_table.md) |
 | 05 | Create Customer table with proper constraints and solve queries. Customer (Custno, Name, City, Birthdate, Occupation, Duebalance). | [05_customer_table.md](05_customer_table.md) |
 
----
+______________________________________________________________________
 
 ## Program 02 — Employee Queries Index
 
@@ -27,7 +27,7 @@
 | 2.9 | Display name of employees who have joined in January. |
 | 2.10 | Display joining date in 'dd-mm-yyyy' format. |
 
----
+______________________________________________________________________
 
 ## Program 03 — PL/SQL Programs Index
 

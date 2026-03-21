@@ -39,7 +39,7 @@ ROLLNO  NAME             CITY    BIRTHDATE   FEESPAID  COURSE
 5 rows selected.
 ```
 
----
+______________________________________________________________________
 
 ### 1. Display details of student born in the month of 'May'.
 
@@ -58,7 +58,7 @@ ROLLNO  NAME          CITY    BIRTHDATE   FEESPAID  COURSE
 3       Rahul Verma   Mumbai  15-05-2000  42000     BCA
 ```
 
----
+______________________________________________________________________
 
 ### 2. Display maximum feespaid.
 
@@ -76,7 +76,7 @@ MAXIMUM_FEES
 55000
 ```
 
----
+______________________________________________________________________
 
 ### 3. Display details of student living in 'Mumbai'.
 
@@ -95,7 +95,7 @@ ROLLNO  NAME          CITY    BIRTHDATE   FEESPAID  COURSE
 3       Rahul Verma   Mumbai  15-05-2000  42000     BCA
 ```
 
----
+______________________________________________________________________
 
 ### 4. Display details of student whose name starts with 'A'.
 

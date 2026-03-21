@@ -2,7 +2,7 @@
 
 **Question:** Solve the following queries on the employee table.
 
----
+______________________________________________________________________
 
 ### 1. Display details of employee working in deptno 20.
 
@@ -22,7 +22,7 @@ DEPTNO  EMPNO  ENAME   SALARY  JOINING_DATE
 20      106    AMAN    20000   20-11-2016
 ```
 
----
+______________________________________________________________________
 
 ### 2. Display empno, ename, salary of employee working as a 'Clerk'.
 
@@ -38,7 +38,7 @@ SELECT empno, ename, salary FROM employee001 WHERE job = 'Clerk';
 no rows selected
 ```
 
----
+______________________________________________________________________
 
 ### 3. Arrange employee data in descending order of salary.
 
@@ -61,7 +61,7 @@ DEPTNO  EMPNO  ENAME   SALARY  JOINING_DATE
 20      102    ANIL    18000   25-03-2015
 ```
 
----
+______________________________________________________________________
 
 ### 4. Display details of employee whose name ends with 'N'.
 
@@ -81,7 +81,7 @@ DEPTNO  EMPNO  ENAME   SALARY  JOINING_DATE
 20      106    AMAN    20000   20-11-2016
 ```
 
----
+______________________________________________________________________
 
 ### 5. Count total number of employees.
 
@@ -99,7 +99,7 @@ TOTAL_EMPLOYEES
 6
 ```
 
----
+______________________________________________________________________
 
 ### 6. Display total salary.
 
@@ -117,7 +117,7 @@ TOTAL_SALARY
 143000
 ```
 
----
+______________________________________________________________________
 
 ### 7. Display details of employees joined after 2010.
 
@@ -139,7 +139,7 @@ DEPTNO  EMPNO  ENAME   SALARY  JOINING_DATE
 20      106    AMAN    20000   20-11-2016
 ```
 
----
+______________________________________________________________________
 
 ### 8. Display name of the employees having maximum salary.
 
@@ -157,7 +157,7 @@ ENAME
 RAHUL
 ```
 
----
+______________________________________________________________________
 
 ### 9. Display name of employees who have joined in January.
 
@@ -177,7 +177,7 @@ SUNIL
 KIRAN
 ```
 
----
+______________________________________________________________________
 
 ### 10. Display joining date in 'dd-mm-yyyy' format.
 

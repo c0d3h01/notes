@@ -39,7 +39,7 @@ CUSTNO  NAME          CITY    BIRTHDATE   OCCUPATION  DUEBALANCE
 5 rows selected.
 ```
 
----
+______________________________________________________________________
 
 ### 1. Display details of customer living other than 'Pune' city.
 
@@ -59,7 +59,7 @@ CUSTNO  NAME          CITY    BIRTHDATE   OCCUPATION  DUEBALANCE
 105     Rahul Jain    Delhi   10-02-1982  Doctor      8000
 ```
 
----
+______________________________________________________________________
 
 ### 2. Display details of customer eliminating duplicate occupation.
 
@@ -79,7 +79,7 @@ Doctor
 Teacher
 ```
 
----
+______________________________________________________________________
 
 ### 3. Display details of customer whose duebalance is less than 5000 or greater than 10000.
 
@@ -100,7 +100,7 @@ CUSTNO  NAME          CITY    BIRTHDATE   OCCUPATION  DUEBALANCE
 104     Anita Desai   Pune    05-09-1990  Teacher     3000
 ```
 
----
+______________________________________________________________________
 
 ### 4. Display details of customer born in the year 1980.
 

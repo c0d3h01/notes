@@ -1,6 +1,7 @@
 # Program 24
 
 **Question:** Write a program to create and run following threads:
+
 - 1-50 Even Nos
 - 1-50 Odd Nos
 

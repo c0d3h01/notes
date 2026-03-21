@@ -2,7 +2,7 @@
 
 **Question:** Write the following PL/SQL programs.
 
----
+______________________________________________________________________
 
 ### 1. Write a PL/SQL code to accept a number and check whether it is positive, negative or zero.
 
@@ -36,7 +36,7 @@ Number is Positive
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 2. Write a PL/SQL code to accept a number and print whether the number is even or odd.
 
@@ -68,7 +68,7 @@ Number is Odd
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 3. Write a PL/SQL code to accept a number and print a sum of digits of that number.
 
@@ -104,7 +104,7 @@ Sum of digits = 10
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 4. Write a PL/SQL code to accept a number and print reverse of that number.
 
@@ -140,7 +140,7 @@ Reverse number = 4321
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 5. Print the name, job of employees working as a 'Manager' (using cursor).
 
@@ -175,7 +175,7 @@ Name: CLARK  Job: MANAGER
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 6. Write a PL/SQL block to accept 2 numbers and print table of even numbers between that range of that numbers.
 
@@ -217,7 +217,7 @@ new   3:     n2 := 15;
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 7. Write a PL/SQL block to accept a number and check whether it is divisible by 5.
 
@@ -249,7 +249,7 @@ Number is divisible by 5
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 8. Write a PL/SQL block to accept a number if the number is odd print table of that number.
 
@@ -292,7 +292,7 @@ new   2:     n := 5;
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 9. Write a PL/SQL block to accept 2 numbers and print table of numbers between range of that numbers.
 
@@ -331,7 +331,7 @@ new   3:     n2 := 7;
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 10. Write a PL/SQL block to accept 3 numbers and print maximum number. (without using max() function).
 
@@ -378,7 +378,7 @@ Maximum number is: 45
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 11. Write a PL/SQL block to accept a string and print length of string. (without using length() function).
 
@@ -411,7 +411,7 @@ Length of String = 5
 PL/SQL procedure successfully completed.
 ```
 
----
+______________________________________________________________________
 
 ### 12. Write a PL/SQL block to accept 3 numbers and print minimum number. (without using min() function).
 
