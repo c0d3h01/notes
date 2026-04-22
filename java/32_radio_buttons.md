@@ -5,14 +5,17 @@
 ## Program
 
 ```java
+package harshal;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ColorRadioButtons extends JFrame implements ActionListener {
+public class program_32 extends JFrame implements ActionListener {
+
     JRadioButton red, blue, green;
 
-    ColorRadioButtons() {
+    public program_32() {
         setTitle("Color Changer");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +46,7 @@ public class ColorRadioButtons extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new ColorRadioButtons();
+        new program_32();
     }
 }
 ```

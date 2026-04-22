@@ -5,37 +5,40 @@
 ## Program
 
 ```java
+package harshal;
+
 import javax.swing.*;
 import java.awt.event.*;
 
-public class ToggleButton extends JFrame implements ActionListener {
-    JButton btn;
+public class program_28 extends JFrame implements ActionListener {
 
-    ToggleButton() {
-        setTitle("Toggle Button");
-        setSize(300, 150);
-        setLayout(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	JButton btn;
 
-        btn = new JButton("Ok");
-        btn.setBounds(100, 50, 80, 30);
-        btn.addActionListener(this);
-        add(btn);
+	public program_28() {
+		setTitle("Toggle Button");
+		setSize(300, 500);
+		setLayout(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setVisible(true);
-    }
+		btn = new JButton("Ok");
+		btn.setBounds(100, 50, 80, 30);
+		btn.addActionListener(this);
+		add(btn);
 
-    public void actionPerformed(ActionEvent e) {
-        if (btn.getText().equals("Ok")) {
-            btn.setText("KO");
-        } else {
-            btn.setText("Ok");
-        }
-    }
+		setVisible(true);
+	}
 
-    public static void main(String[] args) {
-        new ToggleButton();
-    }
+	public void actionPerformed(ActionEvent e) {
+		if (btn.getText().equals("Ok")) {
+			btn.setText("KO");
+		} else {
+			btn.setText("Ok");
+		}
+	}
+
+	public static void main(String[] args) {
+		new program_28();
+	}
 }
 ```
 

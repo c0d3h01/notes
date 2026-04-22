@@ -5,17 +5,19 @@
 ## Program
 
 ```java
+package harshal;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LoginWindow extends JFrame implements ActionListener {
-    JTextField tfUser;
-    JPasswordField tfPass;
-    JButton btnLogin;
-    JLabel lblMsg;
+public class program_38 extends JFrame implements ActionListener {
+	JTextField tfUser;
+	JPasswordField tfPass;
+	JButton btnLogin;
+	JLabel lblMsg;
 
-    LoginWindow() {
+    program_38() {
         setTitle("Login");
         setSize(350, 200);
         setLayout(new FlowLayout());
@@ -53,7 +55,7 @@ public class LoginWindow extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new LoginWindow();
+        new program_38();
     }
 }
 ```
