@@ -5,11 +5,13 @@
 ## Program
 
 ```java
+package harshal;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class RegistrationForm extends JFrame implements ActionListener {
+public class program_42 extends JFrame implements ActionListener {
     JTextField tfName, tfEmail, tfPhone;
     JPasswordField tfPass;
     JRadioButton rbMale, rbFemale;
@@ -17,7 +19,7 @@ public class RegistrationForm extends JFrame implements ActionListener {
     JButton btnRegister;
     JLabel lblMsg;
 
-    RegistrationForm() {
+    public program_42() {
         setTitle("Registration Form");
         setSize(400, 350);
         setLayout(new GridLayout(8, 2, 5, 5));
@@ -69,7 +71,7 @@ public class RegistrationForm extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new RegistrationForm();
+        new program_42();
     }
 }
 ```
