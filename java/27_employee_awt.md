@@ -5,55 +5,85 @@
 ## Program
 
 ```java
+package harshal;
+
 import java.awt.*;
 import java.awt.event.*;
 
-public class EmployeeInput extends Frame implements ActionListener {
-    TextField tfEmpNo, tfName, tfSalary;
-    Button btnSubmit;
+public class program_27 extends Frame implements ActionListener {
 
-    EmployeeInput() {
-        setTitle("Employee Input");
-        setLayout(new FlowLayout());
-        setSize(400, 200);
+    Label label0, label1, label2;
+    TextField Txt0, Txt1, Txt2;
+    Button btn;
 
-        add(new Label("Emp No:"));
-        tfEmpNo = new TextField(15);
-        add(tfEmpNo);
+    public program_27() {
+        setTitle("Employee Form");
 
-        add(new Label("Name:"));
-        tfName = new TextField(15);
-        add(tfName);
+        label0 = new Label("Emp No : ");
+        label1 = new Label("Emp Name : ");
+        label2 = new Label("Emp Salary : ");
 
-        add(new Label("Salary:"));
-        tfSalary = new TextField(15);
-        add(tfSalary);
+        Txt0 = new TextField(15);
+        Txt1 = new TextField(15);
+        Txt2 = new TextField(15);
 
-        btnSubmit = new Button("Submit");
-        btnSubmit.addActionListener(this);
-        add(btnSubmit);
+        btn = new Button("Submit ;)");
+        btn.addActionListener(this);
 
+        setLayout(new GridLayout(4, 2));
+
+        add(label0); add(Txt0);
+        add(label1); add(Txt1);
+        add(label2); add(Txt2);
+
+        add(new Label(" "));
+        add(btn);
+
+        setSize(300, 200);
         setVisible(true);
+
         addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) { dispose(); }
+            public void windowClosing(WindowEvent we) {
+                dispose();
+            }
         });
     }
 
     public void actionPerformed(ActionEvent e) {
-        Frame display = new Frame("Employee Details");
-        display.setLayout(new FlowLayout());
-        display.setSize(300, 200);
-        display.add(new Label("Emp No : " + tfEmpNo.getText()));
-        display.add(new Label("Name   : " + tfName.getText()));
-        display.add(new Label("Salary : " + tfSalary.getText()));
-        display.setVisible(true);
-        display.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) { display.dispose(); }
-        });
+        String empNo = Txt0.getText();
+        String name = Txt1.getText();
+        String salary = Txt2.getText();
+
+        new DisplayFrameAWT(empNo, name, salary);
     }
 
     public static void main(String[] args) {
-        new EmployeeInput();
+        new program_27();
+    }
+}
+
+class DisplayFrameAWT extends Frame {
+    public DisplayFrameAWT(String empNo, String name, String salary) {
+        setTitle("Employee Details");
+
+        Label label0 = new Label("Emp No : " + empNo);
+        Label label1 = new Label("Emp Name : " + name);
+        Label label2 = new Label("Emp Salary : " + salary);
+
+        setLayout(new GridLayout(3, 1));
+
+        add(label0);
+        add(label1);
+        add(label2);
+
+        setSize(300, 150);
+        setVisible(true);
+
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                dispose();
+            }
+        });
     }
 }
 ```

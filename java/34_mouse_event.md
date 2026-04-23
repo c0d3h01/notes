@@ -5,49 +5,58 @@
 ## Program
 
 ```java
-import javax.swing.*;
+package harshal;
+
 import java.awt.*;
 import java.awt.event.*;
 
-public class MouseEventDemo extends JFrame implements MouseListener {
-    JLabel label;
+public class program_34 extends Frame implements MouseListener {
 
-    MouseEventDemo() {
-        setTitle("Mouse Event Demo");
-        setSize(400, 300);
-        setLayout(new FlowLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	Label l;
 
-        label = new JLabel("Perform a mouse action...");
-        add(label);
+	public program_34() {
+		setTitle("Mouse Event Example");
+		l = new Label("Perform Mouse Action");
+		l.setBounds(50, 100, 200, 30);
 
-        addMouseListener(this);
-        setVisible(true);
-    }
+		add(l);
+		addMouseListener(this);
 
-    public void mouseClicked(MouseEvent e) {
-        label.setText("Mouse Clicked at (" + e.getX() + ", " + e.getY() + ")");
-    }
+		setSize(300, 300);
+		setLayout(null);
+		setVisible(true);
 
-    public void mousePressed(MouseEvent e) {
-        label.setText("Mouse Pressed at (" + e.getX() + ", " + e.getY() + ")");
-    }
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				dispose();
+			}
+		});
+	}
 
-    public void mouseReleased(MouseEvent e) {
-        label.setText("Mouse Released at (" + e.getX() + ", " + e.getY() + ")");
-    }
+	public void mouseClicked(MouseEvent e) {
+		l.setText("Mouse Clicked");
+	}
 
-    public void mouseEntered(MouseEvent e) {
-        label.setText("Mouse Entered the window");
-    }
+	public void mousePressed(MouseEvent e) {
+		l.setText("Mouse Pressed");
+	}
 
-    public void mouseExited(MouseEvent e) {
-        label.setText("Mouse Exited the window");
-    }
+	public void mouseReleased(MouseEvent e) {
+		l.setText("Mouse Released");
+	}
 
-    public static void main(String[] args) {
-        new MouseEventDemo();
-    }
+	public void mouseEntered(MouseEvent e) {
+		l.setText("Mouse Entered");
+	}
+
+	public void mouseExited(MouseEvent e) {
+		l.setText("Mouse Exited");
+	}
+
+	public static void main(String[] args) {
+		new program_34();
+	}
+
 }
 ```
 

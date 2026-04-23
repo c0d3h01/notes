@@ -5,48 +5,52 @@
 ## Program
 
 ```java
-import javax.swing.*;
+package harshal;
+
 import java.awt.*;
 import java.awt.event.*;
 
-public class CheckBoxDemo extends JFrame implements ItemListener {
-    JCheckBox chkJava, chkPython, chkC;
-    JLabel lblStatus;
+public class program_39 extends Frame implements ItemListener {
+	Checkbox cBox0, cBox1, cBox2;
+	Label l;
 
-    CheckBoxDemo() {
-        setTitle("CheckBox Demo");
-        setSize(350, 200);
-        setLayout(new FlowLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	program_39() {
+		setLayout(new FlowLayout());
 
-        chkJava   = new JCheckBox("Java");
-        chkPython = new JCheckBox("Python");
-        chkC      = new JCheckBox("C++");
+		cBox0 = new Checkbox("Nix");
+		cBox1 = new Checkbox("Rust");
+		cBox2 = new Checkbox("Go");
 
-        chkJava.addItemListener(this);
-        chkPython.addItemListener(this);
-        chkC.addItemListener(this);
+		l = new Label("Select options");
 
-        add(chkJava); add(chkPython); add(chkC);
 
-        lblStatus = new JLabel("No selection.");
-        add(lblStatus);
+		add(cBox0);
+		add(cBox1);
+		add(cBox2);
+		add(l);
 
-        setVisible(true);
-    }
+		cBox0.addItemListener(this);
+		cBox1.addItemListener(this);
+		cBox2.addItemListener(this);
 
-    public void itemStateChanged(ItemEvent e) {
-        String status = "Selected: ";
-        if (chkJava.isSelected())   status += "Java ";
-        if (chkPython.isSelected()) status += "Python ";
-        if (chkC.isSelected())      status += "C++ ";
-        if (status.equals("Selected: ")) status = "No selection.";
-        lblStatus.setText(status);
-    }
+		setSize(400, 400);
+		setVisible(true);
 
-    public static void main(String[] args) {
-        new CheckBoxDemo();
-    }
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				dispose();
+			}
+		});
+	}
+
+	public void itemStateChanged(ItemEvent e) {
+		String status = "Nix: " + cBox0.getState() + " | Rust: " + cBox1.getState() + " | Go: " + cBox2.getState();
+		l.setText(status);
+	}
+
+	public static void main(String[] args) {
+		new program_39();
+	}
 }
 ```
 

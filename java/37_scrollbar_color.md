@@ -5,44 +5,45 @@
 ## Program
 
 ```java
+package harshal;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ScrollbarColor extends JFrame implements AdjustmentListener {
-    JScrollBar redBar, greenBar, blueBar;
+public class program_37 extends JFrame implements AdjustmentListener {
 
-    ScrollbarColor() {
-        setTitle("Scrollbar Color Changer");
-        setSize(400, 200);
-        setLayout(new GridLayout(3, 2, 5, 5));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	JScrollBar sBar;
+	JPanel panel;
 
-        redBar   = new JScrollBar(JScrollBar.HORIZONTAL, 0, 1, 0, 255);
-        greenBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 1, 0, 255);
-        blueBar  = new JScrollBar(JScrollBar.HORIZONTAL, 0, 1, 0, 255);
+	program_37() {
+		setTitle("Color Scrollbar");
 
-        redBar.addAdjustmentListener(this);
-        greenBar.addAdjustmentListener(this);
-        blueBar.addAdjustmentListener(this);
+		panel = new JPanel();
 
-        add(new JLabel("Red"));   add(redBar);
-        add(new JLabel("Green")); add(greenBar);
-        add(new JLabel("Blue"));  add(blueBar);
+		sBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 0, 0, 360);
+		sBar.addAdjustmentListener(this);
 
-        setVisible(true);
-    }
+		add(panel, BorderLayout.CENTER);
+		add(sBar, BorderLayout.SOUTH);
 
-    public void adjustmentValueChanged(AdjustmentEvent e) {
-        int r = redBar.getValue();
-        int g = greenBar.getValue();
-        int b = blueBar.getValue();
-        getContentPane().setBackground(new Color(r, g, b));
-    }
+		setSize(400, 200);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
 
-    public static void main(String[] args) {
-        new ScrollbarColor();
-    }
+	public void adjustmentValueChanged(AdjustmentEvent e) {
+		int value = sBar.getValue();
+		float hue = value / 360.0f;
+
+		Color color = Color.getHSBColor(hue, 1.0f, 1.0f);
+		panel.setBackground(color);
+	}
+
+	public static void main(String[] args) {
+		new program_37();
+	}
+
 }
 ```
 

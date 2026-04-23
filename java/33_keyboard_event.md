@@ -5,44 +5,48 @@
 ## Program
 
 ```java
-import javax.swing.*;
+package harshal;
+
 import java.awt.*;
 import java.awt.event.*;
 
-public class KeyboardEvent extends JFrame implements KeyListener {
-    JLabel label;
-    JTextField tf;
+public class program_33 extends Frame implements KeyListener {
+	Label l;
 
-    KeyboardEvent() {
-        setTitle("Keyboard Event Demo");
-        setSize(400, 200);
-        setLayout(new FlowLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public program_33() {
+		setTitle("Key Event Example");
 
-        tf = new JTextField(20);
-        tf.addKeyListener(this);
+		l = new Label("Press Any Key ... ");
+		l.setBounds(50, 100, 200, 30);
 
-        label = new JLabel("Press any key...");
+		add(l);
+		addKeyListener(this);
+		setSize(300, 300);
+		setLayout(null);
+		setVisible(true);
 
-        add(tf);
-        add(label);
-        setVisible(true);
-    }
+		addWindowListener(new WindowAdapter() {
+			public void WindowClosing(WindowEvent we) {
+				dispose();
+			}
+		});
+	}
+
 
     public void keyPressed(KeyEvent e) {
-        label.setText("Key Pressed: " + e.getKeyChar());
+        l.setText("Key Pressed: " + e.getKeyChar());
     }
 
     public void keyReleased(KeyEvent e) {
-        label.setText("Key Released: " + e.getKeyChar());
+        l.setText("Key Released: " + e.getKeyChar());
     }
 
     public void keyTyped(KeyEvent e) {
-        label.setText("Key Typed: " + e.getKeyChar());
+        l.setText("Key Typed: " + e.getKeyChar());
     }
 
     public static void main(String[] args) {
-        new KeyboardEvent();
+        new program_33();
     }
 }
 ```
