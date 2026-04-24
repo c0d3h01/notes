@@ -5,43 +5,46 @@
 ## Program
 
 ```java
+package harshal;
+
 abstract class Vehicle {
-    abstract void startEngine();
-    abstract void stopEngine();
+	abstract void startEngine();
+	abstract void stopEngine();
 }
 
 class Car extends Vehicle {
-    @Override
-    void startEngine() {
-        System.out.println("Car engine started.");
-    }
+	void startEngine() {
+		System.out.println("Car engine starts with key ingition");
+	}
 
-    @Override
-    void stopEngine() {
-        System.out.println("Car engine stopped.");
-    }
+	void stopEngine() {
+		System.out.println("Car engine stop when key is turned off!");
+	}
 }
 
-class Motorcycle extends Vehicle {
-    @Override
-    void startEngine() {
-        System.out.println("Motorcycle engine started.");
-    }
+class MotorCycle extends Vehicle {
+	void startEngine() {
+		System.out.println("MotorCycle engine starts with self or kick");
+	}
 
-    @Override
-    void stopEngine() {
-        System.out.println("Motorcycle engine stopped.");
-    }
+	void stopEngine() {
+		System.out.println("MotorCycle engine stops using kil switch");
+	}
+}
 
-    public static void main(String[] args) {
-        Vehicle car = new Car();
-        car.startEngine();
-        car.stopEngine();
+public class program_14 {
 
-        Vehicle bike = new Motorcycle();
-        bike.startEngine();
-        bike.stopEngine();
-    }
+	public static void main(String[] args) {
+		Vehicle v1 = new Car();
+		Vehicle v2 = new MotorCycle();
+
+		v1.startEngine();
+		v1.stopEngine();
+
+		v2.startEngine();
+		v2.stopEngine();
+	}
+
 }
 ```
 

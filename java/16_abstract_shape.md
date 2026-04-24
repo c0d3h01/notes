@@ -5,69 +5,61 @@
 ## Program
 
 ```java
+package harshal;
+
 abstract class Shape {
-    abstract double getArea();
-    abstract double getVolume();
+    double r, h;
+
+    abstract void Area();
+    abstract void Volume();
 }
 
 class Sphere extends Shape {
-    double radius;
-
-    Sphere(double radius) {
-        this.radius = radius;
+    Sphere(double r) {
+        this.r = r;
     }
 
-    public double getArea() {
-        return 4 * Math.PI * radius * radius;
+    void Area() {
+        double area = 4 * 3.14 * r * r;
+        System.out.printf("Surface Area of Sphere : %.2f\n", area);
     }
 
-    public double getVolume() {
-        return (4.0 / 3) * Math.PI * radius * radius * radius;
-    }
-}
-
-class Cone extends Shape {
-    double radius, height;
-
-    Cone(double radius, double height) {
-        this.radius = radius;
-        this.height = height;
-    }
-
-    public double getArea() {
-        double slant = Math.sqrt(radius * radius + height * height);
-        return Math.PI * radius * (radius + slant);
-    }
-
-    public double getVolume() {
-        return (1.0 / 3) * Math.PI * radius * radius * height;
+    void Volume() {
+        double volume = (4.0 / 3) * 3.14 * r * r * r;
+        System.out.printf("Volume of Sphere : %.2f\n", volume);
     }
 }
 
 class Cylinder extends Shape {
-    double radius, height;
-
-    Cylinder(double radius, double height) {
-        this.radius = radius;
-        this.height = height;
+    Cylinder(double r, double h) {
+        this.r = r;
+        this.h = h;
     }
 
-    public double getArea() {
-        return 2 * Math.PI * radius * (radius + height);
+    void Area() {
+        double area = 2 * 3.14 * r * (r + h);
+        System.out.printf("Surface Area of Cylinder : %.2f\n", area);
     }
 
-    public double getVolume() {
-        return Math.PI * radius * radius * height;
+    void Volume() {
+        double volume = 3.14 * r * r * h;
+        System.out.printf("Volume of Cylinder : %.2f\n", volume);
     }
+}
 
+public class program_16 {
     public static void main(String[] args) {
-        Shape sphere   = new Sphere(5);
-        Shape cone     = new Cone(3, 7);
-        Shape cylinder = new Cylinder(4, 10);
+        Shape s;
 
-        System.out.printf("Sphere   - Area: %.2f, Volume: %.2f%n", sphere.getArea(),   sphere.getVolume());
-        System.out.printf("Cone     - Area: %.2f, Volume: %.2f%n", cone.getArea(),     cone.getVolume());
-        System.out.printf("Cylinder - Area: %.2f, Volume: %.2f%n", cylinder.getArea(), cylinder.getVolume());
+        s = new Sphere(3);
+        s.Area();
+        s.Volume();
+
+        System.out.println();
+
+        s = new Cylinder(3, 5);
+        s.Area();
+        s.Volume();
     }
 }
 ```

@@ -5,48 +5,54 @@
 ## Program
 
 ```java
-public class Employee {
-    String name;
-    double salary;
+package harshal;
 
-    Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
-    }
+import java.util.Scanner;
 
-    void work() {
-        System.out.println(name + " is working.");
-    }
+class Employee {
+	double Salary;
 
-    double getSalary() {
-        return salary;
-    }
+	Employee(double Salary) {
+		this.Salary = Salary;
+	}
+
+	void Work() {
+		System.out.println("Employee is workingt");
+	}
+
+	void getSalary() {
+		System.out.printf("Salary : ", Salary);
+	}
 }
 
-class HRManager extends Employee {
-    HRManager(String name, double salary) {
-        super(name, salary);
-    }
+class hrManager extends Employee {
+	hrManager(double Salary) {
+		super(Salary);
+	}
 
-    @Override
-    void work() {
-        System.out.println(name + " is managing HR operations.");
-    }
+	void Work() {
+		System.out.println("Employees");
+	}
 
-    void addEmp(String empName) {
-        System.out.println(empName + " has been added by " + name);
-    }
+	void addEmp() {
+		System.out.println("HR Manager is added an new Employee");
+	}
+}
 
-    public static void main(String[] args) {
-        Employee emp = new Employee("Raj", 30000);
-        emp.work();
-        System.out.println("Salary: " + emp.getSalary());
+public class program_13 {
 
-        HRManager hr = new HRManager("Priya", 60000);
-        hr.work();
-        System.out.println("Salary: " + hr.getSalary());
-        hr.addEmp("Amit");
-    }
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		System.out.print("Entry salary: ");
+		double Salary = s.nextDouble();
+
+		hrManager hr = new hrManager(Salary);
+		hr.Work();
+		hr.getSalary();
+		hr.addEmp();
+	}
+
 }
 ```
 

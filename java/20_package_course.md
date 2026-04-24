@@ -8,9 +8,19 @@
 // File: course/BCA.java
 package course;
 
-public class BCA {
+public class bca {
+    String name;
+    int roll;
+
+    public bca(String name, int roll) {
+        this.name = name;
+        this.roll = roll;
+    }
+
     public void display() {
-        System.out.println("BCA Students: Harshal, Raj, Priya");
+        System.out.println("BCA Student Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + roll);
     }
 }
 ```
@@ -19,26 +29,39 @@ public class BCA {
 // File: course/MCA.java
 package course;
 
-public class MCA {
+public class mca {
+    String name;
+    int roll;
+
+    public mca(String name, int roll) {
+        this.name = name;
+        this.roll = roll;
+    }
+
     public void display() {
-        System.out.println("MCA Students: Amit, Sneha, Rohit");
+        System.out.println("MCA Student Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + roll);
     }
 }
 ```
 
 ```java
 // File: DemoCourse.java
-import course.BCA;
-import course.MCA;
+package SimpleExamples;
+
+import course.bca;
 
 public class DemoCourse {
     public static void main(String[] args) {
-        BCA bca = new BCA();
-        MCA mca = new MCA();
 
-        System.out.println("--- Course Information ---");
-        bca.display();
-        mca.display();
+        bca b1 = new bca("ABC", 101);
+        b1.display();
+
+        System.out.println();
+
+        course.mca m1 = new course.mca("XYZ", 201);
+        m1.display();
     }
 }
 ```

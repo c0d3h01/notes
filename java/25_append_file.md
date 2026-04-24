@@ -5,28 +5,29 @@
 ## Program
 
 ```java
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+package harshal;
 
-public class AppendFile {
-    public static void main(String[] args) {
-        try {
-            FileInputStream fis  = new FileInputStream("SRC.txt");
-            FileOutputStream fos = new FileOutputStream("DEST.txt", true);
+import java.io.*;
 
-            int byteData;
-            while ((byteData = fis.read()) != -1) {
-                fos.write(byteData);
-            }
+public class program_25 {
+	public static void main(String[] args) {
+		try {
+			FileInputStream fin = new FileInputStream("SRC.txt");
+			FileOutputStream fout = new FileOutputStream("DEST.txt", true);
 
-            fis.close();
-            fos.close();
-            System.out.println("Contents of SRC.txt appended to DEST.txt successfully.");
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
+			int ch;
+
+			while ((ch = fin.read()) != -1) {
+				fout.write(ch);
+			}
+
+			fin.close();
+			fout.close();
+			System.out.println("File content appended successfully.");
+		} catch (IOException e) {
+			System.out.println("Error : " + e);
+		}
+	}
 }
 ```
 

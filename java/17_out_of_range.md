@@ -5,16 +5,23 @@
 ## Program
 
 ```java
+package harshal;
+
 import java.util.Scanner;
 
-public class FactorCheck {
-    static void checkAndPrintFactors(int num) throws Exception {
-        if (num > 1000) {
-            throw new Exception("Number is out of Range");
-        }
-        System.out.print("Factors of " + num + ": ");
-        for (int i = 1; i <= num; i++) {
-            if (num % i == 0) {
+class NumberOutOfRangeException extends Exception {
+    public NumberOutOfRangeException(String message) {
+        super(message);
+    }
+}
+
+public class program_17 {
+
+
+    static void findFactors(int n) {
+        System.out.println("Factors of " + n + " are:");
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
                 System.out.print(i + " ");
             }
         }
@@ -23,12 +30,23 @@ public class FactorCheck {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int num = s.nextInt();
+
         try {
-            checkAndPrintFactors(num);
+            System.out.print("Enter a number: ");
+            int num = s.nextInt();
+
+            if (num > 1000) {
+                throw new NumberOutOfRangeException("Number out of range (>1000)");
+            }
+
+            findFactors(num);
+
+        } catch (NumberOutOfRangeException e) {
+            System.out.println("Exception: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Invalid input!");
+        } finally {
+            s.close();
         }
     }
 }
@@ -38,7 +56,7 @@ public class FactorCheck {
 
 ```
 Enter a number: 12
-Factors of 12: 1 2 3 4 6 12 
+Factors of 12: 1 2 3 4 6 12
 ```
 
 ```
