@@ -5,56 +5,84 @@
 ## Program
 
 ```java
+package harshal;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Calculator extends JFrame implements ActionListener {
-    JTextField tf1, tf2, tfResult;
-    JButton btnAdd, btnSub, btnMul, btnDiv;
+public class program_29 extends JFrame implements ActionListener {
 
-    Calculator() {
-        setTitle("Arithmetic Calculator");
-        setSize(350, 250);
-        setLayout(new FlowLayout());
+    JTextField t;
+    String num = "", op = "";
+    double result = 0;
+
+    public program_29() {
+        setTitle("Swing Calculator");
+        setSize(300, 400);
+        setLayout(new BorderLayout());
+
+        t = new JTextField();
+        t.setFont(new Font("Arial", Font.BOLD, 20));
+        add(t, BorderLayout.NORTH);
+
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout(4, 4, 5, 5));
+
+        String buttons[] = {
+            "7", "8", "9", "/",
+            "4", "5", "6", "*",
+            "1", "2", "3", "-",
+            "0", "C", "=", "+"
+        };
+
+        for (String b : buttons) {
+            JButton btn = new JButton(b);
+            btn.setFont(new Font("Arial", Font.BOLD, 18));
+            btn.addActionListener(this);
+            p.add(btn);
+        }
+
+        add(p, BorderLayout.CENTER);
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        add(new JLabel("Number 1:"));
-        tf1 = new JTextField(10); add(tf1);
-
-        add(new JLabel("Number 2:"));
-        tf2 = new JTextField(10); add(tf2);
-
-        btnAdd = new JButton("+"); btnAdd.addActionListener(this); add(btnAdd);
-        btnSub = new JButton("-"); btnSub.addActionListener(this); add(btnSub);
-        btnMul = new JButton("*"); btnMul.addActionListener(this); add(btnMul);
-        btnDiv = new JButton("/"); btnDiv.addActionListener(this); add(btnDiv);
-
-        add(new JLabel("Result:"));
-        tfResult = new JTextField(10);
-        tfResult.setEditable(false);
-        add(tfResult);
-
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
-        double a = Double.parseDouble(tf1.getText());
-        double b = Double.parseDouble(tf2.getText());
-        double result = 0;
+        String s = e.getActionCommand();
 
-        if (e.getSource() == btnAdd)      result = a + b;
-        else if (e.getSource() == btnSub) result = a - b;
-        else if (e.getSource() == btnMul) result = a * b;
-        else if (e.getSource() == btnDiv) {
-            if (b != 0) result = a / b;
-            else { tfResult.setText("Cannot divide by zero"); return; }
+        if (s.matches("[0-9]")) {
+            num += s;
+            t.setText(num);
+        } else if (s.equals("C")) {
+            num = "";
+            result = 0;
+            op = "";
+            t.setText("");
+        } else if (s.equals("=")) {
+            calculate(Double.parseDouble(num));
+            t.setText("" + result);
+            num = "" + result;
+        } else {
+            calculate(Double.parseDouble(num));
+            op = s;
+            num = "";
         }
-        tfResult.setText(String.valueOf(result));
+    }
+
+    void calculate(double n) {
+        switch (op) {
+            case "+": result += n; break;
+            case "-": result -= n; break;
+            case "*": result *= n; break;
+            case "/": result /= n; break;
+            default: result = n;
+        }
     }
 
     public static void main(String[] args) {
-        new Calculator();
+        new program_29();
     }
 }
 ```
