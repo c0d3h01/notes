@@ -5,37 +5,51 @@
 ## Program
 
 ```java
-public class TrafficSignal extends Thread {
-    String color;
-    int duration;
+package harshal;
 
-    TrafficSignal(String color, int duration) {
-        this.color = color;
-        this.duration = duration;
-    }
+class TrafficSignal extends Thread {
+	private String color;
+	private int time;
 
-    public void run() {
-        try {
-            System.out.println(color + " - GO/STOP signal ON");
-            Thread.sleep(duration);
-            System.out.println(color + " - signal OFF");
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+	public TrafficSignal (String color , int time) {
+		this.color = color;
+		this.time = time;
+	}
+	public void run() {
+		try {
+			System.out.println(color + "Light ON");
+			Thread.sleep(time);
+			System.out.println(color + "Light OFF\n");
 
-    public static void main(String[] args) throws InterruptedException {
-        TrafficSignal red    = new TrafficSignal("RED",    3000);
-        TrafficSignal yellow = new TrafficSignal("YELLOW", 1000);
-        TrafficSignal green  = new TrafficSignal("GREEN",  3000);
+		}
+		catch (InterruptedException e) {
+			System.out.println(e);
+		}
+	}
+}
+public class program_22 {
 
-        red.start();
-        red.join();
-        yellow.start();
-        yellow.join();
-        green.start();
-        green.join();
-    }
+public static void main(String[] args) {
+		while (true) {
+			try {
+				TrafficSignal red = new TrafficSignal("RED" , 3000);
+				red.start();
+				red.join();
+
+				TrafficSignal green = new TrafficSignal("GREEN" , 3000);
+				green.start();
+				green.join();
+
+				TrafficSignal yellow = new TrafficSignal("YELLOw" , 1500);
+				yellow.start();
+				yellow.join();
+			}
+			catch (InterruptedException e) {
+				System.out.println();
+			}
+		}
+}
+
 }
 ```
 
